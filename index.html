@@ -6,7 +6,6 @@
 <title>Sarah Zeaiter | Cybersecurity Portfolio</title>
 <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
 <style>
-  /* General body and font */
   body {
     margin: 0;
     font-family: 'Share Tech Mono', monospace;
@@ -16,7 +15,6 @@
     scroll-behavior: smooth;
   }
 
-  /* Sticky header navbar */
   nav {
     position: sticky;
     top: 0;
@@ -47,7 +45,6 @@
     overflow: hidden;
   }
 
-  /* Animated lilac gradient overlay */
   header::before {
     content: "";
     position: absolute;
@@ -74,13 +71,14 @@
     object-fit: cover;
     position: relative;
     z-index: 2;
-    box-shadow: 0 0 20px #C3AAFF, 0 0 40px #92BCF3;
+    /* Gradient glow from light lilac to deep purple */
+    box-shadow: 0 0 15px #C3AAFF, 0 0 35px #3F184B, 0 0 55px #C3AAFF;
     transition: transform 0.3s, box-shadow 0.3s;
   }
 
   header img:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 35px #C3AAFF, 0 0 50px #92BCF3;
+    box-shadow: 0 0 25px #C3AAFF, 0 0 50px #3F184B, 0 0 70px #C3AAFF;
   }
 
   header h1 {
@@ -99,7 +97,6 @@
     z-index: 2;
   }
 
-  /* Sections styling */
   section {
     max-width: 1000px;
     margin: 60px auto;
@@ -166,7 +163,6 @@
     color: #FF9955;
   }
 
-  /* Matrix background */
   #matrix-bg {
     position: fixed;
     top: 0;
@@ -176,18 +172,6 @@
     z-index: 0;
     pointer-events: none;
   }
-
-  /* Butterflies */
-  .butterfly {
-    position: fixed;
-    width: 60px;
-    height: 60px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    z-index: 1;
-    pointer-events: none;
-  }
-
 </style>
 </head>
 <body>
@@ -206,9 +190,6 @@
   <h1>Sarah Zeaiter</h1>
   <p>Cybersecurity Student at DePaul University | Ethical Hacking | Cloud Security</p>
 </header>
-
-<!-- Animated Butterflies -->
-<div id="butterfly-container"></div>
 
 <section id="about">
   <h2>About Me</h2>
@@ -257,7 +238,6 @@
 </footer>
 
 <script>
-  // Matrix background
   const canvas = document.getElementById('matrix-bg');
   const ctx = canvas.getContext('2d');
   canvas.width = window.innerWidth;
@@ -281,38 +261,6 @@
   }
   setInterval(drawMatrix,50);
   window.addEventListener('resize', () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; });
-
-  // Butterflies floating randomly
-  const butterflyContainer = document.getElementById('butterfly-container');
-  const butterflyCount = 5;
-  const butterflySrc = "BUTTERFLY GIF.gif";
-  const butterflies = [];
-
-  for(let i=0;i<butterflyCount;i++){
-    const b = document.createElement('div');
-    b.className = 'butterfly';
-    b.style.backgroundImage = `url('${butterflySrc}')`;
-    butterflyContainer.appendChild(b);
-    butterflies.push({
-      el: b,
-      x: Math.random()*window.innerWidth,
-      y: Math.random()*window.innerHeight,
-      dx: (Math.random()-0.5)*2,
-      dy: (Math.random()-0.5)*2
-    });
-  }
-
-  function animateButterflies(){
-    butterflies.forEach(b => {
-      b.x += b.dx;
-      b.y += b.dy;
-      if(b.x<0||b.x>window.innerWidth) b.dx*=-1;
-      if(b.y<0||b.y>window.innerHeight) b.dy*=-1;
-      b.el.style.transform = `translate(${b.x}px,${b.y}px) rotate(${Math.sin(b.x+b.y)*15}deg)`;
-    });
-    requestAnimationFrame(animateButterflies);
-  }
-  animateButterflies();
 </script>
 
 </body>

@@ -4,52 +4,59 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sarah Zeaiter | Cybersecurity Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
 <style>
-  /* General Styles */
+  /* Base Styles */
   body {
     margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Share Tech Mono', monospace;
     background-color: #121212;
     color: #e0e0e0;
-    line-height: 1.6;
+    overflow-x: hidden;
   }
 
   a { color: #8C2BA9; text-decoration: none; }
-  a:hover { text-decoration: underline; }
+  a:hover { color: #00FF00; }
 
   header {
     background: linear-gradient(135deg, #3F184B, #8C2BA9);
-    color: #fff;
     text-align: center;
-    padding: 60px 20px 40px 20px;
+    padding: 80px 20px 60px 20px;
     position: relative;
   }
 
   header img {
-    width: 150px;
-    height: 150px;
+    width: 160px;
+    height: 160px;
     border-radius: 50%;
-    border: 3px solid #fff;
+    border: 3px solid #00FF00;
     margin-top: 20px;
     object-fit: cover;
+    box-shadow: 0 0 20px #00FF00;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  header img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px #00FF00;
   }
 
   header h1 {
-    font-size: 2.8em;
-    margin: 0;
-    text-shadow: 1px 1px 4px #000;
+    font-size: 3em;
+    margin: 10px 0 0 0;
+    text-shadow: 2px 2px 6px #000;
   }
 
   header p {
     font-size: 1.2em;
-    margin-top: 10px;
-    text-shadow: 1px 1px 4px #000;
+    margin-top: 5px;
+    text-shadow: 1px 1px 3px #000;
   }
 
   section {
-    max-width: 900px;
-    margin: 50px auto;
+    max-width: 1000px;
+    margin: 60px auto;
     padding: 0 20px;
+    position: relative;
   }
 
   h2 {
@@ -59,75 +66,83 @@
     margin-bottom: 20px;
   }
 
-  ul { list-style-type: none; padding-left: 0; }
+  ul { list-style: none; padding-left: 0; }
 
   li {
-    margin-bottom: 15px;
-    padding: 10px;
-    background-color: #2a2a2a;
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #1c1c1c;
     border-left: 5px solid #8C2BA9;
-    transition: transform 0.2s;
+    transition: transform 0.2s, background-color 0.2s;
   }
 
-  li:hover { transform: scale(1.02); }
+  li:hover {
+    transform: scale(1.03);
+    background-color: #2a1f3c;
+  }
+
+  .project-card {
+    background-color: #1c1c1c;
+    padding: 20px;
+    margin-bottom: 25px;
+    border-left: 5px solid #00FF00;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px #00FF00;
+  }
 
   footer {
     text-align: center;
-    padding: 30px 20px;
+    padding: 40px 20px;
     background-color: #3F184B;
     color: #ccc;
   }
 
-  body::before {
-    content: '';
+  /* Matrix-style subtle background animation */
+  #matrix-bg {
     position: fixed;
     top: 0; left: 0;
     width: 100%; height: 100%;
-    background: repeating-linear-gradient(
-      0deg,
-      rgba(255,255,255,0.02),
-      rgba(255,255,255,0.02) 1px,
-      transparent 1px,
-      transparent 2px
-    );
     z-index: 0;
     pointer-events: none;
   }
 
-  section, header, footer {
-    position: relative;
-    z-index: 1;
-  }
+  canvas { display: block; }
+  section, header, footer { position: relative; z-index: 1; }
 </style>
 </head>
 <body>
 
+<canvas id="matrix-bg"></canvas>
+
 <header>
   <h1>Sarah Zeaiter</h1>
-  <p>Cybersecurity Student at DePaul University | Ethical Hacking | Cloud Security | System Automation</p>
-  <img src="your-photo.jpg" alt="Sarah Zeaiter">
+  <p>Cybersecurity Student at DePaul University | Ethical Hacking | Cloud Security</p>
+  <img src="sarah-photo.jpg" alt="Sarah Zeaiter">
 </header>
 
 <section>
   <h2>About Me</h2>
   <p>
-    I am a cybersecurity and cloud security student at DePaul University with hands-on experience in Python, network security, cloud computing, and system administration. I combine technical knowledge with a background in healthcare and engineering, enabling me to anticipate risks, make rapid decisions, and implement precise, adaptable solutions.
+    I am a cybersecurity and cloud security student with hands-on experience in Python, network security, cloud computing, and system administration. 
+    I combine technical knowledge with insights from healthcare and engineering environments, enabling rapid problem-solving, risk anticipation, and precise, adaptable execution. My independent projects and lab work strengthen my ability to analyze, adapt, and implement solutions effectively in real-world scenarios.
   </p>
 </section>
 
 <section>
   <h2>Projects</h2>
-  <ul>
-    <li>
-      <strong>TryHackMe Labs:</strong> Completed web exploitation and penetration testing challenges, including XSS, SQL Injection, and authentication bypass.
-    </li>
-    <li>
-      <strong>Eclipse AI Assistant:</strong> Independently developing a personal AI project applying system architecture, security, and automation principles.
-    </li>
-    <li>
-      <strong>Arduino & Biomedical Projects:</strong> Built small systems to practice electronics, programming, and design.
-    </li>
-  </ul>
+  <div class="project-card">
+    <strong>TryHackMe Labs:</strong> Completed challenges in web exploitation, penetration testing, and system security.
+  </div>
+  <div class="project-card">
+    <strong>Eclipse AI Assistant:</strong> Developing a personal AI assistant applying system architecture, automation, and cybersecurity principles.
+  </div>
+  <div class="project-card">
+    <strong>Arduino & Biomedical Projects:</strong> Built small systems to practice electronics, programming, and interdisciplinary problem-solving.
+  </div>
 </section>
 
 <section>
@@ -157,7 +172,7 @@
 <section>
   <h2>Contact</h2>
   <p>
-    <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a> | 
+    <a href="https://www.linkedin.com/in/sarah-zeaiter-911b422b3/" target="_blank">LinkedIn</a> | 
     <a href="https://github.com/yourusername" target="_blank">GitHub</a> | 
     <a href="mailto:sarahzeaiter7@gmail.com">Email</a>
   </p>
@@ -166,6 +181,40 @@
 <footer>
   &copy; 2025 Sarah Zeaiter | DePaul University
 </footer>
+
+<script>
+  // Matrix background effect
+  const canvas = document.getElementById('matrix-bg');
+  const ctx = canvas.getContext('2d');
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%';
+  const fontSize = 14;
+  const columns = canvas.width / fontSize;
+  const drops = Array(Math.floor(columns)).fill(1);
+
+  function draw() {
+    ctx.fillStyle = 'rgba(18,18,18,0.05)';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = '#00FF00';
+    ctx.font = fontSize + 'px monospace';
+    for (let i = 0; i < drops.length; i++) {
+      const text = letters[Math.floor(Math.random() * letters.length)];
+      ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+      drops[i]++;
+      if (drops[i] * fontSize > canvas.height || Math.random() > 0.975) {
+        drops[i] = 0;
+      }
+    }
+  }
+
+  setInterval(draw, 50);
+  window.addEventListener('resize', () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  });
+</script>
 
 </body>
 </html>

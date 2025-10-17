@@ -1,246 +1,264 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sarah Zeaiter | Cybersecurity Portfolio</title>
-<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
-<style>
-body {
-  margin: 0;
-  font-family: 'Share Tech Mono', monospace;
-  background-color: #121212;
-  color: #e0e0e0;
-  overflow-x: hidden;
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sarah Zeaiter | Cybersecurity Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Share Tech Mono', monospace;
+      background-color: #121212;
+      color: #e0e0e0;
+      overflow-x: hidden;
+    }
 
-/* Links */
-a { color: #8C2BA9; text-decoration: none; }
-a:hover { color: #FF9955; }
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #3F184B, #8C2BA9);
+      text-align: center;
+      padding: 80px 20px 60px 20px;
+      position: relative;
+      overflow: hidden;
+      z-index: 2;
+    }
 
-/* Header */
-header {
-  background: linear-gradient(135deg, #3F184B, #8C2BA9);
-  text-align: center;
-  padding: 80px 20px 60px 20px;
-  position: relative;
-  overflow: hidden;
-  z-index: 2;
-}
+    header img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 3px solid #C3AAFF;
+      margin-top: 20px;
+      object-fit: cover;
+      box-shadow: 0 0 20px #C3AAFF, 0 0 40px #92BCF3;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
 
-header img {
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  border: 3px solid #C3AAFF; /* lilac glow */
-  margin-top: 20px;
-  object-fit: cover;
-  box-shadow: 0 0 20px #C3AAFF, 0 0 40px #92BCF3;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-header img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 35px #C3AAFF, 0 0 50px #92BCF3;
-}
+    header img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 35px #C3AAFF, 0 0 50px #92BCF3;
+    }
 
-header h1 {
-  font-size: 3em;
-  margin: 15px 0 0 0;
-  text-shadow: 2px 2px 6px #000;
-}
+    header h1 {
+      font-size: 3em;
+      margin: 15px 0 0 0;
+      text-shadow: 2px 2px 6px #000;
+    }
 
-header p {
-  font-size: 1.2em;
-  margin-top: 5px;
-  text-shadow: 1px 1px 3px #000;
-}
+    header p {
+      font-size: 1.2em;
+      margin-top: 5px;
+      text-shadow: 1px 1px 3px #000;
+    }
 
-/* Sections */
-section {
-  max-width: 1000px;
-  margin: 60px auto;
-  padding: 0 20px;
-  position: relative;
-  z-index: 2;
-}
+    /* Sections */
+    section {
+      max-width: 1000px;
+      margin: 60px auto;
+      padding: 0 20px;
+      position: relative;
+      z-index: 2;
+    }
 
-h2 {
-  color: #8C2BA9;
-  border-bottom: 2px solid #3F184B;
-  padding-bottom: 6px;
-  margin-bottom: 20px;
-}
+    h2 {
+      color: #8C2BA9;
+      border-bottom: 2px solid #3F184B;
+      padding-bottom: 6px;
+      margin-bottom: 20px;
+    }
 
-.card {
-  background-color: #1c1c1c;
-  padding: 20px;
-  margin-bottom: 25px;
-  border-left: 5px solid #8C2BA9;
-  border-radius: 8px;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 15px #8C2BA9;
-}
+    .card {
+      background-color: #1c1c1c;
+      padding: 20px;
+      margin-bottom: 25px;
+      border-left: 5px solid #8C2BA9;
+      border-radius: 8px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
 
-ul.skills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  padding: 0;
-}
-ul.skills li {
-  background: #2a1f3c;
-  padding: 10px 15px;
-  border-radius: 6px;
-  list-style: none;
-  font-size: 0.9em;
-  transition: background 0.2s;
-}
-ul.skills li:hover { background: #3F184B; }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 15px #8C2BA9;
+    }
 
-footer {
-  text-align: center;
-  padding: 40px 20px;
-  background-color: #3F184B;
-  color: #ccc;
-}
+    ul.skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 0;
+    }
 
-/* Matrix-style subtle background */
-#matrix-bg {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  z-index: 0;
-  pointer-events: none;
-}
+    ul.skills li {
+      background: #2a1f3c;
+      padding: 10px 15px;
+      border-radius: 6px;
+      list-style: none;
+      font-size: 0.9em;
+      transition: background 0.2s;
+    }
 
-/* Animated Butterflies */
-.butterfly {
-  position: fixed;
-  width: 40px;
-  height: 40px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  z-index: 1;
-  pointer-events: none;
-  animation: fly linear infinite;
-}
+    ul.skills li:hover {
+      background: #3F184B;
+    }
 
-@keyframes fly {
-  0% { transform: translate(0,0) rotate(0deg); }
-  25% { transform: translate(200px,100px) rotate(30deg); }
-  50% { transform: translate(-150px,250px) rotate(-30deg); }
-  75% { transform: translate(300px,-100px) rotate(45deg); }
-  100% { transform: translate(0,0) rotate(0deg); }
-}
-</style>
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      background-color: #3F184B;
+      color: #ccc;
+    }
+
+    /* Matrix-style subtle background */
+    #matrix-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* Animated Butterflies */
+    .butterfly {
+      position: fixed;
+      width: 40px;
+      height: 40px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      z-index: 1;
+      pointer-events: none;
+      animation: fly linear infinite;
+    }
+
+    @keyframes fly {
+      0% {
+        transform: translate(0, 0) rotate(0deg);
+      }
+
+      25% {
+        transform: translate(200px, 100px) rotate(30deg);
+      }
+
+      50% {
+        transform: translate(-150px, 250px) rotate(-30deg);
+      }
+
+      75% {
+        transform: translate(300px, -100px) rotate(45deg);
+      }
+
+      100% {
+        transform: translate(0, 0) rotate(0deg);
+      }
+    }
+  </style>
 </head>
 <body>
 
-<canvas id="matrix-bg"></canvas>
+  <canvas id="matrix-bg"></canvas>
 
-<header>
-  <img src="B4DA01CC-426C-4BAA-8407-7036B8EE8492.jpeg" alt="Sarah Zeaiter">
-  <h1>Sarah Zeaiter</h1>
-  <p>Cybersecurity Student at DePaul University | Ethical Hacking | Cloud Security</p>
-</header>
+  <header>
+    <img src="B4DA01CC-426C-4BAA-8407-7036B8EE8492.jpeg" alt="Sarah Zeaiter">
+    <h1>Sarah Zeaiter</h1>
+    <p>Cybersecurity Student at DePaul University | Ethical Hacking | Cloud Security</p>
+  </header>
 
-<!-- Animated Flapping Butterflies (replace with lilac GIFs if desired) -->
-<div class="butterfly" style="top:5%; left:10%; animation-duration:22s; background-image:url('https://www.bing.com/images/search?view=detailV2&ccid=O0huRUpc&id=E145279CC9DA181D2D5A3F3D5B42A91D974E7E70&thid=OIP.O0huRUpcHcks_hi4oQC2IQHaEJ&mediaurl=https%3A%2F%2Fth.bing.com%2Fth%2Fid%2FR.3b486e454a5c1dc92cfe18b8a100b621%3Frik%3DcH5Olx2pQls9Pw%26riu%3Dhttp%253a%252f%252f31.media.tumblr.com%252f84a927ae539d57fec4956254fb814b9e%252ftumblr_mnyciljc3J1rgpyeqo1_500.gif%26ehk%3D%252bzONMciaWrzKM%252fTzuhStOHN1l9Vze4akYuWYbHg7bZs%253d%26risl%3D%26pid%3DImgRaw%26r%3D0&exph=279&expw=498&q=butterfly+flying+gif+clear+png&FORM=IRPRST&ck=3903A1D16BCC3DBB7CCB7FA09630818D&selectedIndex=3&itb=0&cw=903&ch=760&ajaxhist=0&ajaxserp=0');"></div>
-<div class="butterfly" style="top:60%; left:80%; animation-duration:28s; background-image:url('https://www.bing.com/images/search?view=detailV2&ccid=O0huRUpc&id=E145279CC9DA181D2D5A3F3D5B42A91D974E7E70&thid=OIP.O0huRUpcHcks_hi4oQC2IQHaEJ&mediaurl=https%3A%2F%2Fth.bing.com%2Fth%2Fid%2FR.3b486e454a5c1dc92cfe18b8a100b621%3Frik%3DcH5Olx2pQls9Pw%26riu%3Dhttp%253a%252f%252f31.media.tumblr.com%252f84a927ae539d57fec4956254fb814b9e%252ftumblr_mnyciljc3J1rgpyeqo1_500.gif%26ehk%3D%252bzONMciaWrzKM%252fTzuhStOHN1l9Vze4akYuWYbHg7bZs%253d%26risl%3D%26pid%3DImgRaw%26r%3D0&exph=279&expw=498&q=butterfly+flying+gif+clear+png&FORM=IRPRST&ck=3903A1D16BCC3DBB7CCB7FA09630818D&selectedIndex=3&itb=0&cw=903&ch=760&ajaxhist=0&ajaxserp=0');"></div>
-<div class="butterfly" style="top:40%; left:50%; animation-duration:25s; background-image:url('https://www.bing.com/images/search?view=detailV2&ccid=O0huRUpc&id=E145279CC9DA181D2D5A3F3D5B42A91D974E7E70&thid=OIP.O0huRUpcHcks_hi4oQC2IQHaEJ&mediaurl=https%3A%2F%2Fth.bing.com%2Fth%2Fid%2FR.3b486e454a5c1dc92cfe18b8a100b621%3Frik%3DcH5Olx2pQls9Pw%26riu%3Dhttp%253a%252f%252f31.media.tumblr.com%252f84a927ae539d57fec4956254fb814b9e%252ftumblr_mnyciljc3J1rgpyeqo1_500.gif%26ehk%3D%252bzONMciaWrzKM%252fTzuhStOHN1l9Vze4akYuWYbHg7bZs%253d%26risl%3D%26pid%3DImgRaw%26r%3D0&exph=279&expw=498&q=butterfly+flying+gif+clear+png&FORM=IRPRST&ck=3903A1D16BCC3DBB7CCB7FA09630818D&selectedIndex=3&itb=0&cw=903&ch=760&ajaxhist=0&ajaxserp=0');"></div>
-<div class="butterfly" style="top:20%; left:70%; animation-duration:30s; background-image:url('https://www.bing.com/images/search?view=detailV2&ccid=O0huRUpc&id=E145279CC9DA181D2D5A3F3D5B42A91D974E7E70&thid=OIP.O0huRUpcHcks_hi4oQC2IQHaEJ&mediaurl=https%3A%2F%2Fth.bing.com%2Fth%2Fid%2FR.3b486e454a5c1dc92cfe18b8a100b621%3Frik%3DcH5Olx2pQls9Pw%26riu%3Dhttp%253a%252f%252f31.media.tumblr.com%252f84a927ae539d57fec4956254fb814b9e%252ftumblr_mnyciljc3J1rgpyeqo1_500.gif%26ehk%3D%252bzONMciaWrzKM%252fTzuhStOHN1l9Vze4akYuWYbHg7bZs%253d%26risl%3D%26pid%3DImgRaw%26r%3D0&exph=279&expw=498&q=butterfly+flying+gif+clear+png&FORM=IRPRST&ck=3903A1D16BCC3DBB7CCB7FA09630818D&selectedIndex=3&itb=0&cw=903&ch=760&ajaxhist=0&ajaxserp=0');"></div>
-<div class="butterfly" style="top:80%; left:15%; animation-duration:35s; background-image:url('https://www.bing.com/images/search?view=detailV2&ccid=O0huRUpc&id=E145279CC9DA181D2D5A3F3D5B42A91D974E7E70&thid=OIP.O0huRUpcHcks_hi4oQC2IQHaEJ&mediaurl=https%3A%2F%2Fth.bing.com%2Fth%2Fid%2FR.3b486e454a5c1dc92cfe18b8a100b621%3Frik%3DcH5Olx2pQls9Pw%26riu%3Dhttp%253a%252f%252f31.media.tumblr.com%252f84a927ae539d57fec4956254fb814b9e%252ftumblr_mnyciljc3J1rgpyeqo1_500.gif%26ehk%3D%252bzONMciaWrzKM%252fTzuhStOHN1l9Vze4akYuWYbHg7bZs%253d%26risl%3D%26pid%3DImgRaw%26r%3D0&exph=279&expw=498&q=butterfly+flying+gif+clear+png&FORM=IRPRST&ck=3903A1D16BCC3DBB7CCB7FA09630818D&selectedIndex=3&itb=0&cw=903&ch=760&ajaxhist=0&ajaxserp=0');"></div>
+  <!-- Animated Purple Butterflies -->
+  <div class="butterfly" style="top:5%; left:10%; animation-duration:22s; background-image:url('https://i.imgur.com/4UxzZp2.gif');"></div>
+  <div class="butterfly" style="top:60%; left:80%; animation-duration:28s; background-image:url('https://i.imgur.com/4UxzZp2.gif');"></div>
+  <div class="butterfly" style="top:40%; left:50%; animation-duration:25s; background-image:url('https://i.imgur.com/4UxzZp2.gif');"></div>
+  <div class="butterfly" style="top:20%; left:70%; animation-duration:30s; background-image:url('https://i.imgur.com/4UxzZp2.gif');"></div>
+  <div class="butterfly" style="top:80%; left:15%; animation-duration:35s; background-image:url('https://i.imgur.com/4UxzZp2.gif');"></div>
 
-<section>
-  <h2>About Me</h2>
-  <div class="card">
-    <p>
-      I am a cybersecurity and cloud security student with hands-on experience in Python, network security, cloud computing, and system administration. 
-      I combine technical knowledge with insights from healthcare and engineering environments, enabling rapid problem-solving, risk anticipation, and precise, adaptable execution.
-    </p>
-  </div>
-</section>
+  <section>
+    <h2>About Me</h2>
+    <div class="card">
+      <p>
+        I am a cybersecurity and cloud security student with hands-on experience in Python, network security, cloud computing, and system administration.
+        I combine technical knowledge with insights from healthcare and engineering environments, enabling rapid problem-solving, risk anticipation, and precise, adaptable execution.
+      </p>
+    </div>
+  </section>
 
-<section>
-  <h2>Projects</h2>
-  <div class="card"><strong>TryHackMe Labs:</strong> Completed challenges in web exploitation, penetration testing, and system security.</div>
-  <div class="card"><strong>Eclipse AI Assistant:</strong> Developing a personal AI assistant applying system architecture, automation, and cybersecurity principles.</div>
-  <div class="card"><strong>Arduino & Biomedical Projects:</strong> Built small systems to practice electronics, programming, and interdisciplinary problem-solving.</div>
-</section>
+  <section>
+    <h2>Projects</h2>
+    <div class="card"><strong>TryHackMe Labs:</strong> Completed challenges in web exploitation, penetration testing, and system security.</div>
+    <div class="card"><strong>Eclipse AI Assistant:</strong> Developing a personal AI assistant applying system architecture, automation, and cybersecurity principles.</div>
+    <div class="card"><strong>Arduino & Biomedical Projects:</strong> Built small systems to practice electronics, programming, and interdisciplinary problem-solving.</div>
+  </section>
 
-<section>
-  <h2>Certifications & Learning</h2>
-  <ul class="skills">
-    <li>TryHackMe: Pre-Security / Jr Penetration Tester</li>
-    <li>Google Cybersecurity Certificate (In Progress)</li>
-  </ul>
-</section>
+  <section>
+    <h2>Certifications & Learning</h2>
+    <ul class="skills">
+      <li>TryHackMe: Pre-Security / Jr Penetration Tester</li>
+      <li>Google Cybersecurity Certificate (In Progress)</li>
+    </ul>
+  </section>
 
-<section>
-  <h2>Skills</h2>
-  <ul class="skills">
-    <li>Cybersecurity</li>
-    <li>Network Security</li>
-    <li>Cloud Security</li>
-    <li>Python</li>
-    <li>Ethical Hacking</li>
-    <li>System Administration</li>
-    <li>Risk Assessment</li>
-    <li>Data Privacy & Compliance</li>
-    <li>Automation & Scripting</li>
-    <li>Critical Thinking & Adaptability</li>
-  </ul>
-</section>
+  <section>
+    <h2>Skills</h2>
+    <ul class="skills">
+      <li>Cybersecurity</li>
+      <li>Network Security</li>
+      <li>Cloud Security</li>
+      <li>Python</li>
+      <li>Ethical Hacking</li>
+      <li>System Administration</li>
+      <li>Risk Assessment</li>
+      <li>Data Privacy & Compliance</li>
+      <li>Automation & Scripting</li>
+      <li>Critical Thinking & Adaptability</li>
+    </ul>
+  </section>
 
-<section>
-  <h2>Contact</h2>
-  <ul class="skills">
-    <li><a href="https://www.linkedin.com/in/sarah-zeaiter-911b422b3/" target="_blank">LinkedIn</a></li>
-    <li><a href="https://github.com/yourusername" target="_blank">GitHub</a></li>
-    <li><a href="mailto:sarahzeaiter7@gmail.com">Email</a></li>
-  </ul>
-</section>
+  <section>
+    <h2>Contact</h2>
+    <ul class="skills">
+      <li><a href="https://www.linkedin.com/in/sarah-zeaiter-911b422b3/" target="_blank">LinkedIn</a></li>
+      <li><a href="https://github.com/yourusername" target="_blank">GitHub</a></li>
+      <li><a href="mailto:sarahzeaiter7@gmail.com">Email</a></li>
+    </ul>
+  </section>
 
-<footer>
-  &copy; 2025 Sarah Zeaiter | DePaul University
-</footer>
+  <footer>
+    &copy; 2025 Sarah Zeaiter | DePaul University
+  </footer>
 
-<script>
-  // Matrix background effect (subtle gray)
-  const canvas = document.getElementById('matrix-bg');
-  const ctx = canvas.getContext('2d');
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-
-  const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%';
-  const fontSize = 14;
-  const columns = canvas.width / fontSize;
-  const drops = Array(Math.floor(columns)).fill(1);
-
-  function draw() {
-    ctx.fillStyle = 'rgba(18,18,18,0.08)';
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = '#1a1a1a';
-    ctx.font = fontSize + 'px monospace';
-    for (let i = 0; i < drops.length; i++) {
-      const text = letters[Math.floor(Math.random() * letters.length)];
-      ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-      drops[i]++;
-      if (drops[i] * fontSize > canvas.height || Math.random() > 0.975) {
-        drops[i] = 0;
-      }
-    }
-  }
-
-  setInterval(draw, 50);
-  window.addEventListener('resize', () => {
+  <script>
+    // Matrix background effect (subtle gray)
+    const canvas = document.getElementById('matrix-bg');
+    const ctx = canvas.getContext('2d');
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-  });
-</script>
+
+    const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%';
+    const fontSize = 14;
+    const columns = canvas.width / fontSize;
+    const drops = Array(Math.floor(columns)).fill(1);
+
+    function draw() {
+      ctx.fillStyle = 'rgba(18,18,18,0.08)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = '#1a1a1a';
+      ctx.font = fontSize + 'px monospace';
+      for (let i = 0; i < drops.length; i++) {
+        const text = letters[Math.floor(Math.random() * letters.length)];
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+        drops[i]++;
+        if (drops[i] * fontSize > canvas.height || Math.random() > 0.975) {
+          drops[i] = 0;
+        }
+      }
+    }
+
+    setInterval(draw, 50);
+    window.addEventListener('resize', () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+  </script>
 
 </body>
 </html>

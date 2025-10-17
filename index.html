@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sarah Zeaiter | Cybersecurity Portfolio</title>
 <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<!-- Font Awesome for icons -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 <style>
   body {
     margin: 0;
@@ -43,6 +45,7 @@
     text-align: center;
     padding: 100px 20px 80px 20px;
     overflow: hidden;
+    border-radius: 30px;
   }
 
   header::before {
@@ -53,8 +56,8 @@
     background-size: 400% 400%;
     animation: gradientShift 15s ease infinite;
     z-index: 0;
-    border-radius: 30px;
     opacity: 0.8;
+    border-radius: 30px;
   }
 
   @keyframes gradientShift {
@@ -71,7 +74,6 @@
     object-fit: cover;
     position: relative;
     z-index: 2;
-    /* Gradient glow from light lilac to deep purple */
     box-shadow: 0 0 15px #C3AAFF, 0 0 35px #3F184B, 0 0 55px #C3AAFF;
     transition: transform 0.3s, box-shadow 0.3s;
   }
@@ -146,21 +148,32 @@
     background: #3F184B;
   }
 
+  #contact {
+    text-align:center;
+    margin-top:60px;
+  }
+
+  #contact h2 {
+    margin-bottom:20px;
+  }
+
+  #contact div a {
+    color:#C3AAFF;
+    font-size:2em;
+    margin:0 20px;
+    transition: all 0.3s ease;
+  }
+
+  #contact div a:hover {
+    color:#FF9955;
+    transform: scale(1.2);
+  }
+
   footer {
     text-align: center;
     padding: 40px 20px;
     background-color: #3F184B;
     color: #ccc;
-  }
-
-  footer a {
-    color: #C3AAFF;
-    text-decoration: none;
-    margin: 0 10px;
-  }
-
-  footer a:hover {
-    color: #FF9955;
   }
 
   #matrix-bg {
@@ -225,12 +238,12 @@
 </section>
 
 <section id="contact">
-  <h2>Contact</h2>
-  <ul class="skills">
-    <li><a href="https://www.linkedin.com/in/sarah-zeaiter-911b422b3/" target="_blank">LinkedIn</a></li>
-    <li><a href="https://github.com/yourusername" target="_blank">GitHub</a></li>
-    <li><a href="mailto:sarahzeaiter7@gmail.com">Email</a></li>
-  </ul>
+  <h2>Get in Contact</h2>
+  <div>
+    <a href="https://www.linkedin.com/in/sarah-zeaiter-911b422b3/" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
+    <a href="mailto:sarahzeaiter7@gmail.com"><i class="fas fa-envelope"></i></a>
+  </div>
 </section>
 
 <footer>
@@ -238,29 +251,42 @@
 </footer>
 
 <script>
-  const canvas = document.getElementById('matrix-bg');
-  const ctx = canvas.getContext('2d');
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-  const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%';
-  const fontSize = 14;
-  const columns = canvas.width / fontSize;
-  const drops = Array(Math.floor(columns)).fill(1);
+const canvas = document.getElementById('matrix-bg');
+const ctx = canvas.getContext('2d');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
 
-  function drawMatrix() {
-    ctx.fillStyle = 'rgba(18,18,18,0.08)';
+const fontSize = 16;
+const columns = Math.floor(canvas.width / fontSize);
+const drops = Array(columns).fill(0);
+
+function getGradient(y) {
+    const alpha = 1 - y / canvas.height; // fade towards bottom
+    return `rgba(198, 170, 255, ${alpha})`; // lilac fading
+}
+
+function drawMatrix() {
+    ctx.fillStyle = 'rgba(18, 18, 18, 0.08)';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = '#1a1a1a';
+
     ctx.font = fontSize + 'px monospace';
-    for(let i=0;i<drops.length;i++){
-      const text = letters[Math.floor(Math.random()*letters.length)];
-      ctx.fillText(text, i*fontSize, drops[i]*fontSize);
-      drops[i]++;
-      if(drops[i]*fontSize > canvas.height || Math.random() > 0.975) drops[i]=0;
+    for(let i=0; i<drops.length; i++){
+        const binary = Math.random() > 0.5 ? '0' : '1';
+        const x = i * fontSize;
+        const y = drops[i] * fontSize;
+        ctx.fillStyle = getGradient(y);
+        ctx.fillText(binary, x, y);
+
+        if(y > canvas.height || Math.random() > 0.975) drops[i] = 0;
+        drops[i]++;
     }
-  }
-  setInterval(drawMatrix,50);
-  window.addEventListener('resize', () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; });
+}
+
+setInterval(drawMatrix, 50);
+window.addEventListener('resize', () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+});
 </script>
 
 </body>

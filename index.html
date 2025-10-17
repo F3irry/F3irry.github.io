@@ -1,256 +1,268 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sarah Zeaiter | Cybersecurity Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Share Tech Mono', monospace;
-      background-color: #121212;
-      color: #e0e0e0;
-      overflow-x: hidden;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sarah Zeaiter | Cybersecurity Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<style>
+  body {
+    margin: 0;
+    font-family: 'Share Tech Mono', monospace;
+    background-color: #121212;
+    color: #e0e0e0;
+    overflow-x: hidden;
+  }
 
-    /* Header with dynamic purple gradient */
-    header {
-      background: linear-gradient(135deg, #8C2BA9, #3F184B);
-      background-size: 400% 400%;
-      animation: gradientShift 10s ease infinite;
-      text-align: center;
-      padding: 80px 20px 60px 20px;
-      position: relative;
-      overflow: hidden;
-      z-index: 2;
-    }
+  /* Header with dynamic animated background */
+  header {
+    position: relative;
+    text-align: center;
+    padding: 80px 20px 60px 20px;
+    overflow: hidden;
+  }
 
-    @keyframes gradientShift {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
+  /* Animated gradient overlay */
+  header::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(135deg, #8C2BA9, #3F184B, #C3AAFF, #92BCF3);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+    z-index: 0;
+  }
 
-    header img {
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      border: 3px solid #C3AAFF;
-      margin-top: 20px;
-      object-fit: cover;
-      box-shadow: 0 0 20px #C3AAFF, 0 0 40px #92BCF3;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
 
-    header img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 35px #C3AAFF, 0 0 50px #92BCF3;
-    }
+  header img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 3px solid #C3AAFF;
+    object-fit: cover;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 0 20px #C3AAFF, 0 0 40px #92BCF3;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
 
-    header h1 {
-      font-size: 3em;
-      margin: 15px 0 0 0;
-      text-shadow: 2px 2px 6px #000;
-    }
+  header img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 35px #C3AAFF, 0 0 50px #92BCF3;
+  }
 
-    header p {
-      font-size: 1.2em;
-      margin-top: 5px;
-      text-shadow: 1px 1px 3px #000;
-    }
+  header h1 {
+    font-size: 3em;
+    margin: 15px 0 0 0;
+    text-shadow: 2px 2px 10px #C3AAFF;
+    position: relative;
+    z-index: 2;
+  }
 
-    /* Sections */
-    section {
-      max-width: 1000px;
-      margin: 60px auto;
-      padding: 0 20px;
-      position: relative;
-      z-index: 2;
-    }
+  header p {
+    font-size: 1.2em;
+    margin-top: 5px;
+    text-shadow: 1px 1px 5px #92BCF3;
+    position: relative;
+    z-index: 2;
+  }
 
-    h2 {
-      color: #C3AAFF;
-      border-bottom: 2px solid #3F184B;
-      padding-bottom: 6px;
-      margin-bottom: 20px;
-    }
+  /* Sections */
+  section {
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 2;
+  }
 
-    .card {
-      background-color: #1c1c1c;
-      padding: 20px;
-      margin-bottom: 25px;
-      border-left: 5px solid #8C2BA9;
-      border-radius: 8px;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
+  h2 {
+    color: #C3AAFF;
+    border-bottom: 2px solid #3F184B;
+    padding-bottom: 6px;
+    margin-bottom: 20px;
+  }
 
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 0 15px #8C2BA9;
-    }
+  .card {
+    background-color: #1c1c1c;
+    padding: 20px;
+    margin-bottom: 25px;
+    border-left: 5px solid #8C2BA9;
+    border-radius: 8px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
 
-    ul.skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      padding: 0;
-    }
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px #8C2BA9;
+  }
 
-    ul.skills li {
-      background: #2a1f3c;
-      padding: 10px 15px;
-      border-radius: 6px;
-      list-style: none;
-      font-size: 0.9em;
-      transition: background 0.2s;
-    }
+  ul.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 0;
+  }
 
-    ul.skills li:hover {
-      background: #3F184B;
-    }
+  ul.skills li {
+    background: #2a1f3c;
+    padding: 10px 15px;
+    border-radius: 6px;
+    list-style: none;
+    font-size: 0.9em;
+    transition: background 0.2s;
+  }
 
-    footer {
-      text-align: center;
-      padding: 40px 20px;
-      background-color: #3F184B;
-      color: #ccc;
-    }
+  ul.skills li:hover {
+    background: #3F184B;
+  }
 
-    /* Subtle matrix background */
-    #matrix-bg {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
-      pointer-events: none;
-    }
+  footer {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #3F184B;
+    color: #ccc;
+  }
 
-    /* Animated Butterflies */
-    .butterfly {
-      position: fixed;
-      width: 60px;
-      height: 60px;
-      background-size: contain;
-      background-repeat: no-repeat;
-      z-index: 1;
-      pointer-events: none;
-      animation: fly linear infinite;
-    }
+  /* Subtle matrix background */
+  #matrix-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+  }
 
-    @keyframes fly {
-      0%   { transform: translate(0, 0) rotate(0deg); }
-      25%  { transform: translate(150px, 100px) rotate(30deg); }
-      50%  { transform: translate(-150px, 200px) rotate(-30deg); }
-      75%  { transform: translate(200px, -50px) rotate(45deg); }
-      100% { transform: translate(0, 0) rotate(0deg); }
-    }
+  /* Animated Butterflies */
+  .butterfly {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 1;
+    pointer-events: none;
+    animation: fly linear infinite;
+  }
 
-  </style>
+  @keyframes fly {
+    0%   { transform: translate(0, 0) rotate(0deg); }
+    25%  { transform: translate(150px, 100px) rotate(30deg); }
+    50%  { transform: translate(-150px, 200px) rotate(-30deg); }
+    75%  { transform: translate(200px, -50px) rotate(45deg); }
+    100% { transform: translate(0, 0) rotate(0deg); }
+  }
+
+</style>
 </head>
 <body>
 
-  <canvas id="matrix-bg"></canvas>
+<canvas id="matrix-bg"></canvas>
 
-  <header>
-    <img src="B4DA01CC-426C-4BAA-8407-7036B8EE8492.jpeg" alt="Sarah Zeaiter">
-    <h1>Sarah Zeaiter</h1>
-    <p>Cybersecurity Student at DePaul University | Ethical Hacking | Cloud Security</p>
-  </header>
+<header>
+  <img src="B4DA01CC-426C-4BAA-8407-7036B8EE8492.jpeg" alt="Sarah Zeaiter">
+  <h1>Sarah Zeaiter</h1>
+  <p>Cybersecurity Student at DePaul University | Ethical Hacking | Cloud Security</p>
+</header>
 
-  <!-- Animated Butterflies -->
-  <div class="butterfly" style="top:10%; left:15%; animation-duration:22s; background-image:url('https://th.bing.com/th/id/R.3b486e454a5c1dc92cfe18b8a100b621?rik=cH5Olx2pQls9Pw&riu=http%3a%2f%2f31.media.tumblr.com%2f84a927ae539d57fec4956254fb814b9e%2ftumblr_mnyciljc3J1rgpyeqo1_500.gif&ehk=%2bzONMciaWrzKM%2fTzuhStOHN1l9Vze4akYuWYbHg7bZs%3d&risl=&pid=ImgRaw&r=0');"></div>
-  <div class="butterfly" style="top:60%; left:70%; animation-duration:28s; background-image:url('https://th.bing.com/th/id/R.3b486e454a5c1dc92cfe18b8a100b621?rik=cH5Olx2pQls9Pw&riu=http%3a%2f%2f31.media.tumblr.com%2f84a927ae539d57fec4956254fb814b9e%2ftumblr_mnyciljc3J1rgpyeqo1_500.gif&ehk=%2bzONMciaWrzKM%2fTzuhStOHN1l9Vze4akYuWYbHg7bZs%3d&risl=&pid=ImgRaw&r=0');"></div>
+<!-- Animated Butterflies -->
+<div class="butterfly" style="top:10%; left:15%; animation-duration:22s; background-image:url('BUTTERFLY GIF.gif');"></div>
+<div class="butterfly" style="top:60%; left:70%; animation-duration:28s; background-image:url('BUTTERFLY GIF.gif');"></div>
 
-  <section>
-    <h2>About Me</h2>
-    <div class="card">
-      <p>
-        I am a cybersecurity and cloud security student with hands-on experience in Python, network security, cloud computing, and system administration.
-        I combine technical knowledge with insights from healthcare and engineering environments, enabling rapid problem-solving, risk anticipation, and precise, adaptable execution.
-      </p>
-    </div>
-  </section>
+<section>
+  <h2>About Me</h2>
+  <div class="card">
+    <p>
+      I am a cybersecurity and cloud security student with hands-on experience in Python, network security, cloud computing, and system administration.
+      I combine technical knowledge with insights from healthcare and engineering environments, enabling rapid problem-solving, risk anticipation, and precise, adaptable execution.
+    </p>
+  </div>
+</section>
 
-  <section>
-    <h2>Projects</h2>
-    <div class="card"><strong>TryHackMe Labs:</strong> Completed challenges in web exploitation, penetration testing, and system security.</div>
-    <div class="card"><strong>Eclipse AI Assistant:</strong> Developing a personal AI assistant applying system architecture, automation, and cybersecurity principles.</div>
-    <div class="card"><strong>Arduino & Biomedical Projects:</strong> Built small systems to practice electronics, programming, and interdisciplinary problem-solving.</div>
-  </section>
+<section>
+  <h2>Projects</h2>
+  <div class="card"><strong>TryHackMe Labs:</strong> Completed challenges in web exploitation, penetration testing, and system security.</div>
+  <div class="card"><strong>Eclipse AI Assistant:</strong> Developing a personal AI assistant applying system architecture, automation, and cybersecurity principles.</div>
+  <div class="card"><strong>Arduino & Biomedical Projects:</strong> Built small systems to practice electronics, programming, and interdisciplinary problem-solving.</div>
+</section>
 
-  <section>
-    <h2>Certifications & Learning</h2>
-    <ul class="skills">
-      <li>TryHackMe: Pre-Security / Jr Penetration Tester</li>
-      <li>Google Cybersecurity Certificate (In Progress)</li>
-    </ul>
-  </section>
+<section>
+  <h2>Certifications & Learning</h2>
+  <ul class="skills">
+    <li>TryHackMe: Pre-Security / Jr Penetration Tester</li>
+    <li>Google Cybersecurity Certificate (In Progress)</li>
+  </ul>
+</section>
 
-  <section>
-    <h2>Skills</h2>
-    <ul class="skills">
-      <li>Cybersecurity</li>
-      <li>Network Security</li>
-      <li>Cloud Security</li>
-      <li>Python</li>
-      <li>Ethical Hacking</li>
-      <li>System Administration</li>
-      <li>Risk Assessment</li>
-      <li>Data Privacy & Compliance</li>
-      <li>Automation & Scripting</li>
-      <li>Critical Thinking & Adaptability</li>
-    </ul>
-  </section>
+<section>
+  <h2>Skills</h2>
+  <ul class="skills">
+    <li>Cybersecurity</li>
+    <li>Network Security</li>
+    <li>Cloud Security</li>
+    <li>Python</li>
+    <li>Ethical Hacking</li>
+    <li>System Administration</li>
+    <li>Risk Assessment</li>
+    <li>Data Privacy & Compliance</li>
+    <li>Automation & Scripting</li>
+    <li>Critical Thinking & Adaptability</li>
+  </ul>
+</section>
 
-  <section>
-    <h2>Contact</h2>
-    <ul class="skills">
-      <li><a href="https://www.linkedin.com/in/sarah-zeaiter-911b422b3/" target="_blank">LinkedIn</a></li>
-      <li><a href="https://github.com/yourusername" target="_blank">GitHub</a></li>
-      <li><a href="mailto:sarahzeaiter7@gmail.com">Email</a></li>
-    </ul>
-  </section>
+<section>
+  <h2>Contact</h2>
+  <ul class="skills">
+    <li><a href="https://www.linkedin.com/in/sarah-zeaiter-911b422b3/" target="_blank">LinkedIn</a></li>
+    <li><a href="https://github.com/yourusername" target="_blank">GitHub</a></li>
+    <li><a href="mailto:sarahzeaiter7@gmail.com">Email</a></li>
+  </ul>
+</section>
 
-  <footer>
-    &copy; 2025 Sarah Zeaiter | DePaul University
-  </footer>
+<footer>
+  &copy; 2025 Sarah Zeaiter | DePaul University
+</footer>
 
-  <script>
-    // Subtle gray matrix background
-    const canvas = document.getElementById('matrix-bg');
-    const ctx = canvas.getContext('2d');
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+<script>
+  // Subtle matrix background
+  const canvas = document.getElementById('matrix-bg');
+  const ctx = canvas.getContext('2d');
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
 
-    const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%';
-    const fontSize = 14;
-    const columns = canvas.width / fontSize;
-    const drops = Array(Math.floor(columns)).fill(1);
+  const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%';
+  const fontSize = 14;
+  const columns = canvas.width / fontSize;
+  const drops = Array(Math.floor(columns)).fill(1);
 
-    function draw() {
-      ctx.fillStyle = 'rgba(18,18,18,0.08)';
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-      ctx.fillStyle = '#1a1a1a'; // dark gray text
-      ctx.font = fontSize + 'px monospace';
-      for (let i = 0; i < drops.length; i++) {
-        const text = letters[Math.floor(Math.random() * letters.length)];
-        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-        drops[i]++;
-        if (drops[i] * fontSize > canvas.height || Math.random() > 0.975) {
-          drops[i] = 0;
-        }
+  function draw() {
+    ctx.fillStyle = 'rgba(18,18,18,0.08)';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = '#1a1a1a'; // dark gray text
+    ctx.font = fontSize + 'px monospace';
+    for (let i = 0; i < drops.length; i++) {
+      const text = letters[Math.floor(Math.random() * letters.length)];
+      ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+      drops[i]++;
+      if (drops[i] * fontSize > canvas.height || Math.random() > 0.975) {
+        drops[i] = 0;
       }
     }
+  }
 
-    setInterval(draw, 50);
-    window.addEventListener('resize', () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    });
-  </script>
+  setInterval(draw, 50);
+  window.addEventListener('resize', () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  });
+</script>
 
 </body>
 </html>

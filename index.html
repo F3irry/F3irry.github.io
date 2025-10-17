@@ -6,7 +6,6 @@
 <title>Sarah Zeaiter | Cybersecurity Portfolio</title>
 <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
 <style>
-  /* Base Styles */
   body {
     margin: 0;
     font-family: 'Share Tech Mono', monospace;
@@ -26,8 +25,8 @@
   }
 
   header img {
-    width: 160px;
-    height: 160px;
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
     border: 3px solid #00FF00;
     margin-top: 20px;
@@ -42,7 +41,7 @@
 
   header h1 {
     font-size: 3em;
-    margin: 10px 0 0 0;
+    margin: 15px 0 0 0;
     text-shadow: 2px 2px 6px #000;
   }
 
@@ -66,33 +65,34 @@
     margin-bottom: 20px;
   }
 
-  ul { list-style: none; padding-left: 0; }
-
-  li {
-    margin-bottom: 20px;
-    padding: 15px;
-    background-color: #1c1c1c;
-    border-left: 5px solid #8C2BA9;
-    transition: transform 0.2s, background-color 0.2s;
-  }
-
-  li:hover {
-    transform: scale(1.03);
-    background-color: #2a1f3c;
-  }
-
-  .project-card {
+  .card {
     background-color: #1c1c1c;
     padding: 20px;
     margin-bottom: 25px;
-    border-left: 5px solid #00FF00;
+    border-left: 5px solid #8C2BA9;
     transition: transform 0.2s, box-shadow 0.2s;
   }
 
-  .project-card:hover {
+  .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 0 20px #00FF00;
+    box-shadow: 0 0 15px #00FF00;
   }
+
+  ul.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 0;
+  }
+  ul.skills li {
+    background: #2a1f3c;
+    padding: 10px 15px;
+    border-radius: 6px;
+    list-style: none;
+    font-size: 0.9em;
+    transition: background 0.2s;
+  }
+  ul.skills li:hover { background: #3F184B; }
 
   footer {
     text-align: center;
@@ -119,47 +119,49 @@
 <canvas id="matrix-bg"></canvas>
 
 <header>
+  <img src="B4DA01CC-426C-4BAA-8407-7036B8EE8492.jpeg" alt="Sarah Zeaiter">
   <h1>Sarah Zeaiter</h1>
   <p>Cybersecurity Student at DePaul University | Ethical Hacking | Cloud Security</p>
-  <img src="B4DA01CC-426C-4BAA-8407-7036B8EE8492.jpeg" alt="Sarah Zeaiter">
 </header>
 
 <section>
   <h2>About Me</h2>
-  <p>
-    I am a cybersecurity and cloud security student with hands-on experience in Python, network security, cloud computing, and system administration. 
-    I combine technical knowledge with insights from healthcare and engineering environments, enabling rapid problem-solving, risk anticipation, and precise, adaptable execution. My independent projects and lab work strengthen my ability to analyze, adapt, and implement solutions effectively in real-world scenarios.
-  </p>
+  <div class="card">
+    <p>
+      I am a cybersecurity and cloud security student with hands-on experience in Python, network security, cloud computing, and system administration. 
+      I combine technical knowledge with insights from healthcare and engineering environments, enabling rapid problem-solving, risk anticipation, and precise, adaptable execution.
+    </p>
+  </div>
 </section>
 
 <section>
   <h2>Projects</h2>
-  <div class="project-card">
+  <div class="card">
     <strong>TryHackMe Labs:</strong> Completed challenges in web exploitation, penetration testing, and system security.
   </div>
-  <div class="project-card">
+  <div class="card">
     <strong>Eclipse AI Assistant:</strong> Developing a personal AI assistant applying system architecture, automation, and cybersecurity principles.
   </div>
-  <div class="project-card">
+  <div class="card">
     <strong>Arduino & Biomedical Projects:</strong> Built small systems to practice electronics, programming, and interdisciplinary problem-solving.
   </div>
 </section>
 
 <section>
   <h2>Certifications & Learning</h2>
-  <ul>
-    <li>TryHackMe: Pre-Security / Jr Penetration Tester Path</li>
+  <ul class="skills">
+    <li>TryHackMe: Pre-Security / Jr Penetration Tester</li>
     <li>Google Cybersecurity Certificate (In Progress)</li>
   </ul>
 </section>
 
 <section>
   <h2>Skills</h2>
-  <ul>
+  <ul class="skills">
     <li>Cybersecurity</li>
     <li>Network Security</li>
     <li>Cloud Security</li>
-    <li>Python (Programming)</li>
+    <li>Python</li>
     <li>Ethical Hacking</li>
     <li>System Administration</li>
     <li>Risk Assessment</li>
@@ -171,11 +173,11 @@
 
 <section>
   <h2>Contact</h2>
-  <p>
-    <a href="https://www.linkedin.com/in/sarah-zeaiter-911b422b3/" target="_blank">LinkedIn</a> | 
-    <a href="https://github.com/yourusername" target="_blank">GitHub</a> | 
-    <a href="mailto:sarahzeaiter7@gmail.com">Email</a>
-  </p>
+  <ul class="skills">
+    <li><a href="https://www.linkedin.com/in/sarah-zeaiter-911b422b3/" target="_blank">LinkedIn</a></li>
+    <li><a href="https://github.com/yourusername" target="_blank">GitHub</a></li>
+    <li><a href="mailto:sarahzeaiter7@gmail.com">Email</a></li>
+  </ul>
 </section>
 
 <footer>
@@ -183,7 +185,7 @@
 </footer>
 
 <script>
-  // Matrix background effect
+  // Matrix background effect (subtle gray)
   const canvas = document.getElementById('matrix-bg');
   const ctx = canvas.getContext('2d');
   canvas.width = window.innerWidth;
@@ -195,9 +197,9 @@
   const drops = Array(Math.floor(columns)).fill(1);
 
   function draw() {
-    ctx.fillStyle = 'rgba(18,18,18,0.05)';
+    ctx.fillStyle = 'rgba(18,18,18,0.08)'; // subtle dark background
     ctx.fillRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = '#00FF00';
+    ctx.fillStyle = '#2f2f2f'; // subtle gray text
     ctx.font = fontSize + 'px monospace';
     for (let i = 0; i < drops.length; i++) {
       const text = letters[Math.floor(Math.random() * letters.length)];

@@ -1,146 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sarah Zeaiter | Cybersecurity Portfolio</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #121212;
-      color: #e0e0e0;
-      margin: 0;
-      padding: 0;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sarah Zeaiter | Cybersecurity Portfolio</title>
+<style>
+  /* General Styles */
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+    line-height: 1.6;
+  }
 
-    header {
-      background-color: #1a1a1a;
-      padding: 40px 20px;
-      text-align: center;
-    }
+  a { color: #8C2BA9; text-decoration: none; }
+  a:hover { text-decoration: underline; }
 
-    header h1 {
-      margin: 0;
-      font-size: 2.5em;
-      color: #00aaff;
-    }
+  header {
+    background: linear-gradient(135deg, #3F184B, #8C2BA9);
+    color: #fff;
+    text-align: center;
+    padding: 60px 20px 40px 20px;
+    position: relative;
+  }
 
-    header p {
-      margin-top: 10px;
-      font-size: 1.2em;
-      color: #c0c0c0;
-    }
+  header img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    margin-top: 20px;
+    object-fit: cover;
+  }
 
-    section {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
+  header h1 {
+    font-size: 2.8em;
+    margin: 0;
+    text-shadow: 1px 1px 4px #000;
+  }
 
-    h2 {
-      color: #00ccff;
-      border-bottom: 1px solid #333;
-      padding-bottom: 5px;
-      margin-bottom: 15px;
-    }
+  header p {
+    font-size: 1.2em;
+    margin-top: 10px;
+    text-shadow: 1px 1px 4px #000;
+  }
 
-    ul {
-      list-style-type: none;
-      padding-left: 0;
-    }
+  section {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 0 20px;
+  }
 
-    li {
-      margin-bottom: 12px;
-    }
+  h2 {
+    color: #8C2BA9;
+    border-bottom: 2px solid #3F184B;
+    padding-bottom: 6px;
+    margin-bottom: 20px;
+  }
 
-    a {
-      color: #00ccff;
-      text-decoration: none;
-    }
+  ul { list-style-type: none; padding-left: 0; }
 
-    a:hover {
-      text-decoration: underline;
-    }
+  li {
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #2a2a2a;
+    border-left: 5px solid #8C2BA9;
+    transition: transform 0.2s;
+  }
 
-    footer {
-      text-align: center;
-      padding: 30px 20px;
-      background-color: #1a1a1a;
-      color: #777;
-    }
-  </style>
+  li:hover { transform: scale(1.02); }
+
+  footer {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: #3F184B;
+    color: #ccc;
+  }
+
+  /* Matrix-style subtle effect */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: repeating-linear-gradient(
+      0deg,
+      rgba(255,255,255,0.02),
+      rgba(255,255,255,0.02) 1px,
+      transparent 1px,
+      transparent 2px
+    );
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  section, header, footer {
+    position: relative;
+    z-index: 1;
+  }
+</style>
 </head>
 <body>
 
-  <header>
-    <h1>Sarah Zeaiter</h1>
-    <p>Cybersecurity Student | Cloud Security | Ethical Hacking | System Automation</p>
-  </header>
+<header>
+  <h1>Sarah Zeaiter</h1>
+  <p>Cybersecurity Student | Cloud Security | Ethical Hacking | System Automation</p>
+  <!-- Replace with your profile picture -->
+  <img src="your-photo.jpg" alt="Sarah Zeaiter">
+</header>
 
-  <section>
-    <h2>About Me</h2>
-    <p>
-      I am a cybersecurity and cloud security student passionate about ethical hacking, system protection, and automation. 
-      I combine hands-on technical experience with insights from healthcare and engineering environments, enabling rapid 
-      problem-solving, proactive threat assessment, and precise, adaptable execution.
-    </p>
-  </section>
+<section>
+  <h2>About Me</h2>
+  <p>
+    I am a cybersecurity and cloud security student passionate about ethical hacking, system protection, and automation. 
+    My interdisciplinary experience in healthcare and engineering enables me to anticipate risks, make rapid decisions, 
+    and implement precise, adaptable solutions.
+  </p>
+</section>
 
-  <section>
-    <h2>Projects</h2>
-    <ul>
-      <li>
-        <strong>TryHackMe Labs:</strong> Completed web exploitation and penetration testing challenges, exploring vulnerabilities 
-        like XSS, SQL Injection, and authentication bypass. Developed reporting and mitigation skills.
-      </li>
-      <li>
-        <strong>Eclipse AI Assistant:</strong> Independently developing a personal AI project applying system architecture, 
-        security, and automation principles.
-      </li>
-      <li>
-        <strong>Arduino & Biomedical Projects:</strong> Built small systems to practice electronics, programming, and design, 
-        enhancing problem-solving and technical precision.
-      </li>
-    </ul>
-  </section>
+<section>
+  <h2>Projects</h2>
+  <ul>
+    <li>
+      <strong>TryHackMe Labs:</strong> Completed web exploitation and penetration testing challenges, exploring vulnerabilities like XSS, SQL Injection, and authentication bypass.
+    </li>
+    <li>
+      <strong>Eclipse AI Assistant:</strong> Independently developing a personal AI project applying system architecture, security, and automation principles.
+    </li>
+    <li>
+      <strong>Arduino & Biomedical Projects:</strong> Built small systems to practice electronics, programming, and design.
+    </li>
+  </ul>
+</section>
 
-  <section>
-    <h2>Certifications & Learning</h2>
-    <ul>
-      <li>TryHackMe: Pre-Security / Jr Penetration Tester Path</li>
-      <li>Google Cybersecurity Certificate (In Progress)</li>
-      <li>Additional online labs and ethical hacking practice</li>
-    </ul>
-  </section>
+<section>
+  <h2>Certifications & Learning</h2>
+  <ul>
+    <li>TryHackMe: Pre-Security / Jr Penetration Tester Path</li>
+    <li>Google Cybersecurity Certificate (In Progress)</li>
+  </ul>
+</section>
 
-  <section>
-    <h2>Skills</h2>
-    <ul>
-      <li>Cybersecurity</li>
-      <li>Network Security</li>
-      <li>Cloud Security</li>
-      <li>Python (Programming)</li>
-      <li>Ethical Hacking</li>
-      <li>System Administration</li>
-      <li>Risk Assessment</li>
-      <li>Data Privacy & Compliance</li>
-      <li>Automation & Scripting</li>
-      <li>Critical Thinking & Adaptability</li>
-    </ul>
-  </section>
+<section>
+  <h2>Skills</h2>
+  <ul>
+    <li>Cybersecurity</li>
+    <li>Network Security</li>
+    <li>Cloud Security</li>
+    <li>Python (Programming)</li>
+    <li>Ethical Hacking</li>
+    <li>System Administration</li>
+    <li>Risk Assessment</li>
+    <li>Data Privacy & Compliance</li>
+    <li>Automation & Scripting</li>
+    <li>Critical Thinking & Adaptability</li>
+  </ul>
+</section>
 
-  <section>
-    <h2>Contact</h2>
-    <p>
-      <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a> | 
-      <a href="https://github.com/yourusername" target="_blank">GitHub</a> | 
-      <a href="mailto:your.email@example.com">Email</a>
-    </p>
-  </section>
+<section>
+  <h2>Contact</h2>
+  <p>
+    <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a> | 
+    <a href="https://github.com/yourusername" target="_blank">GitHub</a> | 
+    <a href="mailto:your.email@example.com">Email</a>
+  </p>
+</section>
 
-  <footer>
-    &copy; 2025 Sarah Zeaiter
-  </footer>
+<footer>
+  &copy; 2025 Sarah Zeaiter
+</footer>
 
 </body>
 </html>

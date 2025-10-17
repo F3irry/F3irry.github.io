@@ -25,6 +25,7 @@ header {
   padding: 80px 20px 60px 20px;
   position: relative;
   overflow: hidden;
+  z-index: 2;
 }
 
 header img {
@@ -34,7 +35,7 @@ header img {
   border: 3px solid #C3AAFF; /* lilac glow */
   margin-top: 20px;
   object-fit: cover;
-  box-shadow: 0 0 20px #C3AAFF, 0 0 40px #92BCF3; /* dual-tone glow */
+  box-shadow: 0 0 20px #C3AAFF, 0 0 40px #92BCF3;
   transition: transform 0.3s, box-shadow 0.3s;
 }
 header img:hover {
@@ -60,6 +61,7 @@ section {
   margin: 60px auto;
   padding: 0 20px;
   position: relative;
+  z-index: 2;
 }
 
 h2 {
@@ -114,23 +116,24 @@ footer {
   pointer-events: none;
 }
 
-/* Butterflies */
+/* Animated Butterflies */
 .butterfly {
   position: fixed;
-  width: 35px;
-  height: 35px;
-  background: url('https://i.imgur.com/4UxzZp2.png') no-repeat center/contain;
-  z-index: 0;
+  width: 40px;
+  height: 40px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 1;
   pointer-events: none;
-  animation: flutter linear infinite;
+  animation: fly linear infinite;
 }
 
-@keyframes flutter {
-  0% { transform: translate(0, 0) rotate(0deg); }
-  25% { transform: translate(250px, 100px) rotate(45deg); }
-  50% { transform: translate(-150px, 250px) rotate(-30deg); }
-  75% { transform: translate(300px, -150px) rotate(60deg); }
-  100% { transform: translate(0, 0) rotate(0deg); }
+@keyframes fly {
+  0% { transform: translate(0,0) rotate(0deg); }
+  25% { transform: translate(200px,100px) rotate(30deg); }
+  50% { transform: translate(-150px,250px) rotate(-30deg); }
+  75% { transform: translate(300px,-100px) rotate(45deg); }
+  100% { transform: translate(0,0) rotate(0deg); }
 }
 </style>
 </head>
@@ -144,12 +147,12 @@ footer {
   <p>Cybersecurity Student at DePaul University | Ethical Hacking | Cloud Security</p>
 </header>
 
-<!-- Butterflies -->
-<div class="butterfly" style="top:5%; left:10%; animation-duration:22s;"></div>
-<div class="butterfly" style="top:60%; left:80%; animation-duration:28s;"></div>
-<div class="butterfly" style="top:40%; left:50%; animation-duration:25s;"></div>
-<div class="butterfly" style="top:20%; left:70%; animation-duration:30s;"></div>
-<div class="butterfly" style="top:80%; left:15%; animation-duration:35s;"></div>
+<!-- Animated Flapping Butterflies (replace with lilac GIFs if desired) -->
+<div class="butterfly" style="top:5%; left:10%; animation-duration:22s; background-image:url('https://i.imgur.com/4UxzZp2.gif');"></div>
+<div class="butterfly" style="top:60%; left:80%; animation-duration:28s; background-image:url('https://i.imgur.com/4UxzZp2.gif');"></div>
+<div class="butterfly" style="top:40%; left:50%; animation-duration:25s; background-image:url('https://i.imgur.com/4UxzZp2.gif');"></div>
+<div class="butterfly" style="top:20%; left:70%; animation-duration:30s; background-image:url('https://i.imgur.com/4UxzZp2.gif');"></div>
+<div class="butterfly" style="top:80%; left:15%; animation-duration:35s; background-image:url('https://i.imgur.com/4UxzZp2.gif');"></div>
 
 <section>
   <h2>About Me</h2>

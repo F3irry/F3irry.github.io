@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sarah Zeaiter | Cybersecurity Portfolio</title>
 <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
-<!-- Font Awesome for icons -->
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 <style>
   body {
@@ -278,7 +277,7 @@
   <div class="get-to-know-card">
     <img src="IMG_2847.jpeg" alt="Sarah Zeaiter" class="get-to-know-img">
     <p>
-       Hi! I’m Sarah. Beyond tech, I love rock climbing, painting, learning new languages, and playing video games. I’m someone who thrives on challenges, enjoys creative problem-solving, and constantly looks for ways to grow and explore new ideas. I bring my curiosity and unique perspective into everything I do!
+      Hi! I’m Sarah. Beyond tech, I love rock climbing, painting, learning new languages, and playing video games. I’m someone who thrives on challenges, enjoys creative problem-solving, and constantly looks for ways to grow and explore new ideas. I bring my curiosity and unique perspective into everything I do!
     </p>
   </div>
 </section>
@@ -292,4 +291,43 @@
     <a href="https://github.com/yourusername" target="_blank">
       <img src="github icon.jpg" alt="GitHub" class="contact-icon">
     </a>
-    <a href
+    <a href="mailto:sarah.zeaiter@example.com">
+      <img src="Purple gmail icon.jpg" alt="Gmail" class="contact-icon">
+    </a>
+  </div>
+</section>
+
+<footer>
+  © 2025 Sarah Zeaiter — Built with Passion and Precision
+</footer>
+
+<!-- MATRIX BINARY BACKGROUND -->
+<script>
+const canvas = document.getElementById('matrix-bg');
+const ctx = canvas.getContext('2d');
+canvas.height = window.innerHeight;
+canvas.width = window.innerWidth;
+
+const chars = '01';
+const fontSize = 16;
+const columns = canvas.width / fontSize;
+const drops = Array.from({ length: columns }).map(() => Math.random() * canvas.height / fontSize);
+
+function draw() {
+  ctx.fillStyle = 'rgba(18,18,18,0.1)';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  ctx.fillStyle = '#8C2BA9';
+  ctx.font = fontSize + 'px monospace';
+  for (let i = 0; i < drops.length; i++) {
+    const text = chars.charAt(Math.floor(Math.random() * chars.length));
+    ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+    if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
+    drops[i]++;
+  }
+}
+
+setInterval(draw, 40);
+</script>
+
+</body>
+</html>

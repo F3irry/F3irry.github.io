@@ -25,7 +25,7 @@
     left:0;
     width:100%;
     height:100%;
-    z-index:-1;
+    z-index:-10;
   }
 
   /* Header */
@@ -37,6 +37,8 @@
     text-align:center;
     padding:50px 20px 80px 20px;
     background: linear-gradient(135deg, #8C2BA9, #3F184B);
+    position: relative;
+    z-index: 1;
   }
 
   header img {
@@ -44,10 +46,12 @@
     height:180px;
     border-radius:50%;
     border:5px solid transparent;
-    background: linear-gradient(135deg, #C3AAFF, #4B2B6D);
+    background: #4B2B6D;
     padding:5px;
     box-shadow: 0 0 20px #C3AAFF, 0 0 40px #8C2BA9;
     transition: all 1s ease-in-out;
+    position: relative;
+    z-index: 2;
   }
 
   header h1 {
@@ -66,30 +70,8 @@
     padding:60px 20px;
     max-width:1000px;
     margin:auto;
-  }
-
-  /* About Me */
-  #about {
-    display:flex;
-    flex-wrap:wrap;
-    align-items:center;
-    gap:40px;
-    justify-content:center;
-  }
-
-  #about img {
-    width:250px;
-    height:250px;
-    border-radius:15px;
-    box-shadow: 0 0 20px #C3AAFF;
-    object-fit:cover;
-  }
-
-  #about .text {
-    flex:1;
-    min-width:250px;
-    color:#EDE6FF;
-    line-height:1.6;
+    position: relative;
+    z-index: 1;
   }
 
   /* Projects */
@@ -128,6 +110,31 @@
   #skills .skill-card:hover {
     transform: scale(1.1);
     box-shadow: 0 0 20px #C3AAFF;
+  }
+
+  /* About Me */
+  #about {
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:40px;
+    justify-content:center;
+    margin-top:40px;
+  }
+
+  #about img {
+    width:250px;
+    height:250px;
+    border-radius:15px;
+    box-shadow: 0 0 20px #C3AAFF;
+    object-fit:cover;
+  }
+
+  #about .text {
+    flex:1;
+    min-width:250px;
+    color:#EDE6FF;
+    line-height:1.6;
   }
 
   /* Contact */
@@ -171,15 +178,6 @@
   <h3>Cybersecurity & Cloud Security Student | AI & Systems Enthusiast</h3>
 </header>
 
-<!-- About Me -->
-<section id="about">
-  <img src="4F8CD4FE-713F-456F-8F7F-7D6BDDEA3474.jpeg" alt="About Sarah">
-  <div class="text">
-    <p>I am a cybersecurity and cloud security student with hands-on experience in Python, network security, cloud computing, and system administration through coursework, labs, and independent research. I bring a unique perspective from healthcare and engineering environments, enabling proactive threat assessment, rapid decision-making, and adaptable problem-solving.</p>
-    <p>Fun facts: I enjoy building AI projects like my personal assistant “Eclipse,” exploring TryHackMe challenges, and experimenting with Arduino and biomedical prosthetic projects. Challenges push me to excel—I thrive when solving complex problems with creativity and precision.</p>
-  </div>
-</section>
-
 <!-- Projects -->
 <section id="projects">
   <h2>Projects</h2>
@@ -205,6 +203,15 @@
   <div class="skill-card">Cloud Security</div>
   <div class="skill-card">Ethical Hacking</div>
   <div class="skill-card">Easily Adaptable</div>
+</section>
+
+<!-- About Me -->
+<section id="about">
+  <img src="4F8CD4FE-713F-456F-8F7F-7D6BDDEA3474.jpeg" alt="About Sarah">
+  <div class="text">
+    <p>I am a cybersecurity and cloud security student with hands-on experience in Python, network security, cloud computing, and system administration through coursework, labs, and independent research. I bring a unique perspective from healthcare and engineering environments, enabling proactive threat assessment, rapid decision-making, and adaptable problem-solving.</p>
+    <p>Fun facts: I enjoy building AI projects like my personal assistant “Eclipse,” exploring TryHackMe challenges, and experimenting with Arduino and biomedical prosthetic projects. Challenges push me to excel—I thrive when solving complex problems with creativity and precision.</p>
+  </div>
 </section>
 
 <!-- Contact -->

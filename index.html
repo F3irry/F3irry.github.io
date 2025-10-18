@@ -148,25 +148,60 @@
     background: #3F184B;
   }
 
+  #get-to-know-me .get-to-know-card {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    background-color: #1c1c1c;
+    padding: 20px;
+    border-left: 5px solid #8C2BA9;
+    border-radius: 8px;
+    align-items: center;
+  }
+
+  #get-to-know-me .get-to-know-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #C3AAFF;
+    box-shadow: 0 0 15px #C3AAFF, 0 0 35px #3F184B;
+    flex-shrink: 0;
+  }
+
+  #get-to-know-me p {
+    flex: 1;
+    font-size: 1em;
+    line-height: 1.5;
+    color: #e0e0e0;
+  }
+
   #contact {
     text-align:center;
     margin-top:60px;
   }
 
   #contact h2 {
-    margin-bottom:20px;
-  }
-
-  #contact div a {
+    margin-bottom:25px;
     color:#C3AAFF;
-    font-size:2em;
-    margin:0 20px;
-    transition: all 0.3s ease;
+    text-shadow: 0 0 10px #C3AAFF;
   }
 
-  #contact div a:hover {
-    color:#FF9955;
+  .contact-icons {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+  }
+
+  .contact-icon {
+    width: 50px;
+    height: 50px;
+    transition: transform 0.3s, filter 0.3s;
+  }
+
+  .contact-icon:hover {
     transform: scale(1.2);
+    filter: drop-shadow(0 0 15px #C3AAFF);
   }
 
   footer {
@@ -195,6 +230,7 @@
   <a href="#about">About</a>
   <a href="#projects">Projects</a>
   <a href="#skills">Skills</a>
+  <a href="#get-to-know-me">Get to Know Me</a>
   <a href="#contact">Contact</a>
 </nav>
 
@@ -237,57 +273,23 @@
   </ul>
 </section>
 
-<section id="contact">
-  <h2>Get in Contact</h2>
-  <div>
-    <a href="https://www.linkedin.com/in/sarah-zeaiter-911b422b3/" target="_blank"><i class="fab fa-linkedin"></i></a>
-    <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
-    <a href="mailto:sarahzeaiter7@gmail.com"><i class="fas fa-envelope"></i></a>
+<section id="get-to-know-me">
+  <h2>Get to Know Me</h2>
+  <div class="get-to-know-card">
+    <img src="IMG_2847.jpeg" alt="Sarah Zeaiter" class="get-to-know-img">
+    <p>
+      Hi, I’m Sarah! Beyond cybersecurity and tech projects, I love exploring creative problem-solving, learning new tools, and pushing myself to excel. I thrive on challenges and enjoy combining technical skills with real-world insight. When I’m not coding or learning about cloud security, I enjoy design, biomedical projects, and staying curious in every environment.
+    </p>
   </div>
 </section>
 
-<footer>
-  &copy; 2025 Sarah Zeaiter | DePaul University
-</footer>
-
-<script>
-const canvas = document.getElementById('matrix-bg');
-const ctx = canvas.getContext('2d');
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
-const fontSize = 16;
-const columns = Math.floor(canvas.width / fontSize);
-const drops = Array(columns).fill(0);
-
-function getGradient(y) {
-    const alpha = 1 - y / canvas.height; // fade towards bottom
-    return `rgba(198, 170, 255, ${alpha})`; // lilac fading
-}
-
-function drawMatrix() {
-    ctx.fillStyle = 'rgba(18, 18, 18, 0.08)';
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-    ctx.font = fontSize + 'px monospace';
-    for(let i=0; i<drops.length; i++){
-        const binary = Math.random() > 0.5 ? '0' : '1';
-        const x = i * fontSize;
-        const y = drops[i] * fontSize;
-        ctx.fillStyle = getGradient(y);
-        ctx.fillText(binary, x, y);
-
-        if(y > canvas.height || Math.random() > 0.975) drops[i] = 0;
-        drops[i]++;
-    }
-}
-
-setInterval(drawMatrix, 50);
-window.addEventListener('resize', () => {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-});
-</script>
-
-</body>
-</html>
+<section id="contact">
+  <h2>Get in Contact</h2>
+  <div class="contact-icons">
+    <a href="https://www.linkedin.com/in/sarah-zeaiter-911b422b3/" target="_blank">
+      <img src="Icon App Purple - Linkedin.jpg" alt="LinkedIn" class="contact-icon">
+    </a>
+    <a href="https://github.com/yourusername" target="_blank">
+      <img src="github icon.jpg" alt="GitHub" class="contact-icon">
+    </a>
+    <a href

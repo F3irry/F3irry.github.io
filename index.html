@@ -7,201 +7,218 @@
 <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 <style>
-body {
-  margin: 0;
-  font-family: 'Share Tech Mono', monospace;
-  background-color: #121212;
-  color: #e0e0e0;
-  overflow-x: hidden;
-  scroll-behavior: smooth;
-}
+  body {
+    margin: 0;
+    font-family: 'Share Tech Mono', monospace;
+    background-color: #121212;
+    color: #e0e0e0;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+  }
 
-/* Navigation */
-nav {
-  position: sticky;
-  top: 0;
-  background-color: #2a1f3c;
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  padding: 15px 0;
-  z-index: 10;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.5);
-}
-nav a {
-  color: #C3AAFF;
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s;
-}
-nav a:hover { color: #FF9955; }
+  nav {
+    position: sticky;
+    top: 0;
+    background-color: #2a1f3c;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 15px 0;
+    z-index: 10;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+  }
 
-/* Header */
-header {
-  position: relative;
-  text-align: center;
-  padding: 100px 20px 80px 20px;
-  overflow: hidden;
-  border-radius: 30px;
-}
-header::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: linear-gradient(135deg, #8C2BA9, #3F184B, #C3AAFF, #92BCF3);
-  background-size: 400% 400%;
-  animation: gradientShift 15s ease infinite;
-  z-index: 0;
-  opacity: 0.8;
-  border-radius: 30px;
-}
-@keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-header img {
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  border: 3px solid #C3AAFF;
-  object-fit: cover;
-  position: relative;
-  z-index: 2;
-  box-shadow: 0 0 15px #C3AAFF, 0 0 35px #3F184B, 0 0 55px #C3AAFF;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-header img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 25px #C3AAFF, 0 0 50px #3F184B, 0 0 70px #C3AAFF;
-}
-header h1 {
-  font-size: 3em;
-  margin: 15px 0 0 0;
-  text-shadow: 2px 2px 10px #C3AAFF;
-  position: relative;
-  z-index: 2;
-}
-header p {
-  font-size: 1.2em;
-  margin-top: 5px;
-  text-shadow: 1px 1px 5px #92BCF3;
-  position: relative;
-  z-index: 2;
-}
+  nav a {
+    color: #C3AAFF;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
 
-/* Sections */
-section {
-  max-width: 1000px;
-  margin: 60px auto;
-  padding: 0 20px;
-  position: relative;
-  z-index: 2;
-}
-h2 {
-  color: #C3AAFF;
-  border-bottom: 2px solid #3F184B;
-  padding-bottom: 6px;
-  margin-bottom: 20px;
-}
-.card {
-  background-color: #1c1c1c;
-  padding: 20px;
-  margin-bottom: 25px;
-  border-left: 5px solid #8C2BA9;
-  border-radius: 8px;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 15px #8C2BA9;
-}
-ul.skills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  padding: 0;
-}
-ul.skills li {
-  background: #2a1f3c;
-  padding: 10px 15px;
-  border-radius: 6px;
-  list-style: none;
-  font-size: 0.9em;
-  transition: background 0.2s;
-}
-ul.skills li:hover { background: #3F184B; }
+  nav a:hover {
+    color: #FF9955;
+  }
 
-/* Get to Know Me */
-#get-to-know-me .get-to-know-card {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  background-color: #1c1c1c;
-  padding: 20px;
-  border-left: 5px solid #8C2BA9;
-  border-radius: 8px;
-  align-items: center;
-}
-#get-to-know-me .get-to-know-img {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid #C3AAFF;
-  box-shadow: 0 0 15px #C3AAFF, 0 0 35px #3F184B;
-  flex-shrink: 0;
-}
-#get-to-know-me p {
-  flex: 1;
-  font-size: 1em;
-  line-height: 1.5;
-  color: #e0e0e0;
-}
+  header {
+    position: relative;
+    text-align: center;
+    padding: 100px 20px 80px 20px;
+    overflow: hidden;
+    border-radius: 30px;
+  }
 
-/* Contact */
-#contact {
-  text-align:center;
-  margin-top:60px;
-}
-#contact h2 {
-  margin-bottom:25px;
-  color:#C3AAFF;
-  text-shadow: 0 0 10px #C3AAFF;
-}
-.contact-icons {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-}
-.contact-icon {
-  width: 50px;
-  height: 50px;
-  transition: transform 0.3s, filter 0.3s;
-}
-.contact-icon:hover {
-  transform: scale(1.2);
-  filter: drop-shadow(0 0 15px #C3AAFF);
-}
+  header::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(135deg, #8C2BA9, #3F184B, #C3AAFF, #92BCF3);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+    z-index: 0;
+    opacity: 0.8;
+    border-radius: 30px;
+  }
 
-/* Footer */
-footer {
-  text-align: center;
-  padding: 40px 20px;
-  background-color: #3F184B;
-  color: #ccc;
-}
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
 
-/* Binary Background */
-#matrix-bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  pointer-events: none;
-}
+  header img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 3px solid #C3AAFF;
+    object-fit: cover;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 0 15px #C3AAFF, 0 0 35px #3F184B, 0 0 55px #C3AAFF;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  header img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px #C3AAFF, 0 0 50px #3F184B, 0 0 70px #C3AAFF;
+  }
+
+  header h1 {
+    font-size: 3em;
+    margin: 15px 0 0 0;
+    text-shadow: 2px 2px 10px #C3AAFF;
+    position: relative;
+    z-index: 2;
+  }
+
+  header p {
+    font-size: 1.2em;
+    margin-top: 5px;
+    text-shadow: 1px 1px 5px #92BCF3;
+    position: relative;
+    z-index: 2;
+  }
+
+  section {
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 2;
+  }
+
+  h2 {
+    color: #C3AAFF;
+    border-bottom: 2px solid #3F184B;
+    padding-bottom: 6px;
+    margin-bottom: 20px;
+  }
+
+  .card {
+    background-color: #1c1c1c;
+    padding: 20px;
+    margin-bottom: 25px;
+    border-left: 5px solid #8C2BA9;
+    border-radius: 8px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px #8C2BA9;
+  }
+
+  ul.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 0;
+  }
+
+  ul.skills li {
+    background: #2a1f3c;
+    padding: 10px 15px;
+    border-radius: 6px;
+    list-style: none;
+    font-size: 0.9em;
+    transition: background 0.2s;
+  }
+
+  ul.skills li:hover {
+    background: #3F184B;
+  }
+
+  #get-to-know-me .get-to-know-card {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    background-color: #1c1c1c;
+    padding: 20px;
+    border-left: 5px solid #8C2BA9;
+    border-radius: 8px;
+    align-items: center;
+  }
+
+  #get-to-know-me .get-to-know-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #C3AAFF;
+    box-shadow: 0 0 15px #C3AAFF, 0 0 35px #3F184B;
+    flex-shrink: 0;
+  }
+
+  #get-to-know-me p {
+    flex: 1;
+    font-size: 1em;
+    line-height: 1.5;
+    color: #e0e0e0;
+  }
+
+  #contact {
+    text-align:center;
+    margin-top:60px;
+  }
+
+  #contact h2 {
+    margin-bottom:25px;
+    color:#C3AAFF;
+    text-shadow: 0 0 10px #C3AAFF;
+  }
+
+  .contact-icons {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+  }
+
+  .contact-icon {
+    width: 50px;
+    height: 50px;
+    transition: transform 0.3s, filter 0.3s;
+  }
+
+  .contact-icon:hover {
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 15px #C3AAFF);
+  }
+
+  footer {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #3F184B;
+    color: #ccc;
+  }
+
+  #matrix-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+  }
 </style>
 </head>
 <body>
@@ -227,7 +244,10 @@ footer {
   <div class="card">
     <p>
       I am a cybersecurity and cloud security student with hands-on experience in Python, network security, cloud computing, and system administration.
+      My academic journey includes <strong>two years of engineering</strong> and <strong>two years of biomedical science</strong>, giving me a unique perspective to solve problems across disciplines.
       I combine technical knowledge with insights from healthcare and engineering environments, enabling rapid problem-solving, risk anticipation, and precise, adaptable execution.
+      <br><br>
+      I was awarded the <strong>Art & Creativity Award (2019)</strong>, highlighting my ability to think creatively and innovate, skills I integrate into every project I tackle.
     </p>
   </div>
 </section>
@@ -237,6 +257,7 @@ footer {
   <div class="card"><strong>TryHackMe Labs:</strong> Completed challenges in web exploitation, penetration testing, and system security.</div>
   <div class="card"><strong>Eclipse AI Assistant:</strong> Developing a personal AI assistant applying system architecture, automation, and cybersecurity principles.</div>
   <div class="card"><strong>Arduino & Biomedical Projects:</strong> Built small systems to practice electronics, programming, and interdisciplinary problem-solving.</div>
+  <div class="card"><strong>Engineering & Robotics:</strong> Participated in aerodynamics club and robotics projects, applying engineering concepts creatively.</div>
 </section>
 
 <section id="skills">
@@ -295,8 +316,8 @@ const columns = Math.floor(canvas.width / fontSize);
 const drops = Array(columns).fill(0);
 
 function getGradient(y) {
-    const alpha = 0.2 - (y / canvas.height) * 0.15; // lighter, less distracting
-    return `rgba(198, 170, 255, ${alpha})`;
+    const alpha = 0.15; // toned down
+    return `rgba(198, 170, 255, ${alpha})`; 
 }
 
 function drawMatrix() {

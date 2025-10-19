@@ -1,315 +1,205 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Sarah Zeaiter | Cybersecurity Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sarah Zeaiter | Cybersecurity Portfolio</title>
+  <link rel="icon" type="image/png" href="Untitled1113_20251019103408.png" />
 
-<!-- 🌙 Favicon -->
-<link rel="icon" type="image/png" href="Untitled1113_20251018173539.png">
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      color: white;
+      background: linear-gradient(to bottom right, #1a001f, #2a0040);
+      overflow-x: hidden;
+      position: relative;
+    }
 
-<!-- Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
-<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    /* Binary waterfall background */
+    .binary {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: -1;
+      font-family: monospace;
+      color: rgba(155, 102, 255, 0.08);
+      white-space: pre;
+      animation: scrollBinary 15s linear infinite;
+    }
 
-<style>
-  body {
-    margin: 0;
-    font-family: 'Share Tech Mono', monospace;
-    background-color: #121212;
-    color: #e0e0e0;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
-  }
+    @keyframes scrollBinary {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-50%); }
+    }
 
-  /* ==== Subtle Matrix Background ==== */
-  #matrix-bg {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    z-index: 0;
-    pointer-events: none;
-    opacity: 0.07; /* toned down */
-  }
+    header {
+      text-align: center;
+      padding: 60px 20px;
+    }
 
-  nav {
-    position: sticky;
-    top: 0;
-    background-color: #2a1f3c;
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    padding: 15px 0;
-    z-index: 10;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
-  }
+    header h1 {
+      font-size: 3rem;
+      text-shadow: 0 0 15px #c18aff;
+    }
 
-  nav a {
-    color: #C3AAFF;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s;
-  }
+    header h2 {
+      font-size: 1.2rem;
+      color: #d8b4ff;
+      text-shadow: 0 0 5px #6f00ff;
+    }
 
-  nav a:hover {
-    color: #FF9955;
-  }
+    section {
+      padding: 50px 20px;
+      max-width: 900px;
+      margin: auto;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(155, 102, 255, 0.3);
+      margin-bottom: 40px;
+      backdrop-filter: blur(5px);
+    }
 
-  header {
-    position: relative;
-    text-align: center;
-    padding: 100px 20px 80px 20px;
-    overflow: hidden;
-    border-radius: 30px;
-  }
+    h2 {
+      border-bottom: 2px solid #8b5cf6;
+      padding-bottom: 10px;
+      color: #e0b0ff;
+      text-shadow: 0 0 8px #8b5cf6;
+    }
 
-  header::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: linear-gradient(135deg, #8C2BA9, #3F184B, #C3AAFF, #92BCF3);
-    background-size: 400% 400%;
-    animation: gradientShift 15s ease infinite;
-    z-index: 0;
-    opacity: 0.8;
-    border-radius: 30px;
-  }
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
 
-  @keyframes gradientShift {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-  }
+    ul li {
+      margin: 8px 0;
+      line-height: 1.6;
+    }
 
-  header img {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    border: 3px solid #C3AAFF;
-    object-fit: cover;
-    position: relative;
-    z-index: 2;
-    box-shadow: 0 0 15px #C3AAFF, 0 0 35px #3F184B, 0 0 55px #C3AAFF;
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
+    .contact {
+      text-align: center;
+      padding: 40px 0;
+    }
 
-  header img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 25px #C3AAFF, 0 0 50px #3F184B, 0 0 70px #C3AAFF;
-  }
+    .contact a {
+      margin: 0 15px;
+      display: inline-block;
+      transition: transform 0.3s ease, filter 0.3s ease;
+    }
 
-  header h1 {
-    font-size: 3em;
-    margin: 15px 0 0 0;
-    text-shadow: 2px 2px 10px #C3AAFF;
-    position: relative;
-    z-index: 2;
-  }
+    .contact a:hover {
+      transform: scale(1.2);
+      filter: drop-shadow(0 0 10px #c18aff);
+    }
 
-  header p {
-    font-size: 1.2em;
-    margin-top: 5px;
-    text-shadow: 1px 1px 5px #92BCF3;
-    position: relative;
-    z-index: 2;
-  }
+    .contact img {
+      width: 45px;
+      height: 45px;
+      border-radius: 10px;
+    }
 
-  section {
-    max-width: 1000px;
-    margin: 60px auto;
-    padding: 0 20px;
-    position: relative;
-    z-index: 2;
-  }
+    footer {
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9rem;
+      color: #bba0ff;
+    }
 
-  h2 {
-    color: #C3AAFF;
-    border-bottom: 2px solid #3F184B;
-    padding-bottom: 6px;
-    margin-bottom: 20px;
-  }
+    .profile-pic {
+      display: block;
+      margin: 0 auto 30px auto;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      border: 4px solid #c18aff;
+      box-shadow: 0 0 30px #b580ff, 0 0 60px #6f00ff;
+      animation: glowPulse 4s ease-in-out infinite alternate;
+    }
 
-  .card {
-    background-color: #1c1c1c;
-    padding: 20px;
-    margin-bottom: 25px;
-    border-left: 5px solid #8C2BA9;
-    border-radius: 8px;
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-
-  .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 15px #8C2BA9;
-  }
-
-  ul.skills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    padding: 0;
-  }
-
-  ul.skills li {
-    background: #2a1f3c;
-    padding: 10px 15px;
-    border-radius: 6px;
-    list-style: none;
-    font-size: 0.9em;
-    transition: background 0.2s;
-  }
-
-  ul.skills li:hover {
-    background: #3F184B;
-  }
-
-  #get-to-know-me .get-to-know-card {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    background-color: #1c1c1c;
-    padding: 20px;
-    border-left: 5px solid #8C2BA9;
-    border-radius: 8px;
-    align-items: center;
-  }
-
-  #get-to-know-me .get-to-know-img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid #C3AAFF;
-    box-shadow: 0 0 15px #C3AAFF, 0 0 35px #3F184B;
-    flex-shrink: 0;
-  }
-
-  #get-to-know-me p {
-    flex: 1;
-    font-size: 1em;
-    line-height: 1.5;
-    color: #e0e0e0;
-  }
-
-  #contact {
-    text-align:center;
-    margin-top:60px;
-  }
-
-  #contact h2 {
-    margin-bottom:25px;
-    color:#C3AAFF;
-    text-shadow: 0 0 10px #C3AAFF;
-  }
-
-  .contact-icons {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-  }
-
-  .contact-icon {
-    width: 50px;
-    height: 50px;
-    transition: transform 0.3s, filter 0.3s;
-  }
-
-  .contact-icon:hover {
-    transform: scale(1.2);
-    filter: drop-shadow(0 0 15px #C3AAFF);
-  }
-
-  footer {
-    text-align: center;
-    padding: 40px 20px;
-    background-color: #3F184B;
-    color: #ccc;
-  }
-</style>
+    @keyframes glowPulse {
+      from {
+        box-shadow: 0 0 30px #d1a4ff, 0 0 60px #8b5cf6;
+      }
+      to {
+        box-shadow: 0 0 40px #6f00ff, 0 0 80px #4b0082;
+      }
+    }
+  </style>
 </head>
 
 <body>
-<canvas id="matrix-bg"></canvas>
+  <div class="binary">
+    01001001 01001110 01000110 01001111 01010011 01000101 01000011 01000011 01010101 01010010 01001001 01010100 01011001
+    01000110 01001111 01010010 01010011 01000101 01000011 01010101 01010010 01001001 01010100 01011001
+    01010011 01000101 01000011 01010101 01010010 01001001 01010100 01011001
+  </div>
 
-<nav>
-  <a href="#about">About</a>
-  <a href="#projects">Projects</a>
-  <a href="#skills">Skills</a>
-  <a href="#get-to-know-me">Get to Know Me</a>
-  <a href="#contact">Contact</a>
-</nav>
+  <header>
+    <img src="IMG_2847.jpeg" alt="Sarah Zeaiter" class="profile-pic" />
+    <h1>Sarah Zeaiter</h1>
+    <h2>Cybersecurity Student at DePaul University | Ethical Hacking | Cloud Security</h2>
+  </header>
 
-<header>
-  <img src="B4DA01CC-426C-4BAA-8407-7036B8EE8492.jpeg" alt="Sarah Zeaiter">
-  <h1>Sarah Zeaiter</h1>
-  <p>Cybersecurity Student at DePaul University | Ethical Hacking | Cloud Security</p>
-</header>
-
-<section id="about">
-  <h2>About Me</h2>
-  <div class="card">
+  <section>
+    <h2>About Me</h2>
     <p>
-      I am a cybersecurity and cloud security student with hands-on experience in Python, network security, cloud computing, and system administration.
-      My academic journey includes two years of engineering and two years of biomedical science, giving me a unique perspective to solve problems across disciplines.
+      I am a cybersecurity and cloud security student with hands-on experience in Python, network security, cloud computing, and system administration. 
+      My academic journey includes two years of engineering and two years of biomedical science, giving me a unique perspective to solve problems across disciplines. 
       I combine technical knowledge with insights from healthcare and engineering environments, enabling rapid problem-solving, risk anticipation, and precise, adaptable execution.
     </p>
     <p>
-      I was awarded the <strong>Art & Creativity Award (2019)</strong>, recognizing my ability to innovate and think creatively — skills I integrate into every project I tackle.
+      I was awarded the <strong>Art & Creativity Award (2019)</strong>, highlighting my ability to think creatively and innovate — skills I integrate into every project I tackle.
     </p>
-  </div>
-</section>
+  </section>
 
-<section id="projects">
-  <h2>Projects</h2>
-  <div class="card"><strong>TryHackMe Labs:</strong> Completed challenges in web exploitation, penetration testing, and system security.</div>
-  <div class="card"><strong>Eclipse AI Assistant:</strong> Developing a personal AI assistant applying system architecture, automation, and cybersecurity principles.</div>
-  <div class="card"><strong>Arduino & Biomedical Projects:</strong> Built small systems to practice electronics, programming, and interdisciplinary problem-solving.</div>
-  <div class="card"><strong>Engineering & Robotics:</strong> Participated in aerodynamics club and robotics projects, applying engineering concepts creatively.</div>
-</section>
+  <section>
+    <h2>Projects</h2>
+    <ul>
+      <li><strong>TryHackMe Labs:</strong> Completed challenges in web exploitation, penetration testing, and system security.</li>
+      <li><strong>Eclipse AI Assistant:</strong> Developing a personal AI assistant applying system architecture, automation, and cybersecurity principles.</li>
+      <li><strong>Arduino & Biomedical Projects:</strong> Built small systems to practice electronics, programming, and interdisciplinary problem-solving.</li>
+      <li><strong>Engineering & Robotics:</strong> Participated in aerodynamics club and robotics projects, applying engineering concepts creatively.</li>
+    </ul>
+  </section>
 
-<section id="skills">
-  <h2>Skills</h2>
-  <ul class="skills">
-    <li>Cybersecurity</li>
-    <li>Network Security</li>
-    <li>Cloud Security</li>
-    <li>Python</li>
-    <li>Ethical Hacking</li>
-    <li>System Administration</li>
-    <li>Risk Assessment</li>
-    <li>Data Privacy & Compliance</li>
-    <li>Automation & Scripting</li>
-    <li>Critical Thinking & Adaptability</li>
-  </ul>
-</section>
+  <section>
+    <h2>Skills</h2>
+    <ul>
+      <li>Cybersecurity</li>
+      <li>Network Security</li>
+      <li>Cloud Security</li>
+      <li>Python</li>
+      <li>Ethical Hacking</li>
+      <li>System Administration</li>
+      <li>Risk Assessment</li>
+      <li>Data Privacy & Compliance</li>
+      <li>Automation & Scripting</li>
+      <li>Critical Thinking & Adaptability</li>
+    </ul>
+  </section>
 
-<section id="get-to-know-me">
-  <h2>Get to Know Me</h2>
-  <div class="get-to-know-card">
-    <img src="IMG_2847.jpeg" alt="Sarah Zeaiter" class="get-to-know-img">
+  <section>
+    <h2>Get to Know Me</h2>
     <p>
-      Hi! I’m Sarah. Beyond tech, I love rock climbing, painting, learning new languages, and playing video games.
-      I thrive on challenges, enjoy creative problem-solving, and constantly look for ways to grow and explore new ideas.
-      I bring my curiosity and creativity into everything I do!
+      Hi! I’m Sarah. Beyond tech, I love rock climbing, painting, learning new languages, and playing video games. 
+      I’m someone who thrives on challenges, enjoys creative problem-solving, and constantly looks for ways to grow and explore new ideas. 
+      I bring my curiosity and unique perspective into everything I do!
     </p>
-  </div>
-</section>
+  </section>
 
-<section id="contact">
-  <h2>Get in Contact</h2>
-  <div class="contact-icons">
-    <a href="https://www.linkedin.com/in/sarah-zeaiter-911b422b3/" target="_blank">
-      <img src="Icon App Purple - Linkedin.jpg" alt="LinkedIn" class="contact-icon">
-    </a>
-    <a href="https://github.com/sarahzeaiter" target="_blank">
-      <img src="github icon.jpg" alt="GitHub" class="contact-icon">
-    </a>
-    <a href="mailto:sarahzeaiter@gmail.com">
-      <img src="email icon purple.jpg" alt="Email" class="contact-icon">
-    </a>
-  </div>
-</section>
+  <section class="contact">
+    <h2>Get in Contact</h2>
+    <a href="https://www.linkedin.com/in/sarahzeaiter" target="_blank"><img src="Icon App Purple - Linkedin.jpg" alt="LinkedIn" /></a>
+    <a href="https://github.com/sarahzeaiter" target="_blank"><img src="github icon.jpg" alt="GitHub" /></a>
+    <a href="mailto:sarahzeaiter@gmail.com"><img src="Purple gmail icon.jpg" alt="Email" /></a>
+  </section>
 
-<footer>© 2025 Sarah Zeaiter | DePaul University</footer>
+  <footer>
+    © 2025 Sarah Zeaiter | DePaul University
+  </footer>
 </body>
 </html>
